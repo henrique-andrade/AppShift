@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(appshift)
+project(appshift C)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(DEPS REQUIRED gtk+-3.0 granite)
@@ -16,18 +16,21 @@ set(SOURCES
 
 add_definitions(${DEPS_CFLAGS_OTHER})
 
-add_executable(appshift ${SOURCES})
+# GResources
+set(GRESOURCE_XML ${CMAKE_SOURCE_DIR}/data/org.example.AppShift.gresource.xml)
+set(GRESOURCE_C ${CMAKE_BINARY_DIR}/gresources.c)
+
+add_custom_command(
+    OUTPUT ${GRESOURCE_C}
+    COMMAND glib-compile-resources
+    --generate-source
+    --target=${GRESOURCE_C}
+    ${GRESOURCE_XML}
+    DEPENDS ${GRESOURCE_XML}
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/data
+)
+
+add_executable(appshift ${SOURCES} ${GRESOURCE_C})
 
 target_link_libraries(appshift ${DEPS_LIBRARIES})
-
-# GResources
-glib_compile_resources(
-    src/org.example.AppShift.gresource.xml
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/data
-    C_SOURCE
-    gresources.c
-)
-add_library(gresources OBJECT gresources.c)
-add_dependencies(appshift gresources)
-target_link_libraries(appshift gresources)
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkWindow" id="main_window">
+        <property name="default_width">800</property>
+        <property name="default_height">600</property>
+        <child>
+            <object class="GtkBox" id="box">
+                <property name="orientation">vertical</property>
+                <child>
+                    <object class="GtkLabel" id="label">
+                        <property name="label">Bem-vindo ao AppShift!</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+</interface>
+
