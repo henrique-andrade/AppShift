@@ -11,4 +11,3 @@ public class AppShift.Application : Gtk.Application {
         window.show_all();
     }
 }
-
