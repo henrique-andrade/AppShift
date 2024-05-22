@@ -8,9 +8,8 @@ public class AppShift.MainWindow : Gtk.ApplicationWindow {
         );
 
         // Use um widget do Granite
-        var welcome = new Granite.Widgets.Welcome();
-        welcome.append("Bem-vindo ao AppShift", "Migre seus aplicativos facilmente.", "dialog-information-symbolic");
+        var welcome = new Granite.Widgets.Welcome("Bem-vindo ao AppShift", "Migre seus aplicativos facilmente.");
+        welcome.append("informação adicional", "Este é um texto adicional.", "dialog-information-symbolic");
         this.add(welcome);
     }
 }
-
