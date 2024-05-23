@@ -1,13 +1,14 @@
 project('appshift', 'vala', 
   version: '0.1',
-  meson_version: '>= 0.49.0'
+  meson_version: '>= 0.59.0'
 )
 
 gnome = import('gnome')
 
 dependencies = [
   dependency('gtk+-3.0'),
-  dependency('granite')
+  dependency('granite'),
+  dependency('gee-0.8')
 ]
 
 gresource = gnome.compile_resources(
