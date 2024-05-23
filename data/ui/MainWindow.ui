@@ -10,6 +10,11 @@
           </object>
         </child>
         <child>
+          <object class="GtkButton" id="export_csv_button">
+            <property name="label">Exportar para CSV</property>
+          </object>
+        </child>
+        <child>
           <object class="GtkScrolledWindow" id="scrolled_window">
             <property name="vexpand">True</property>
             <child>
