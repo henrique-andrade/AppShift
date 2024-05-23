@@ -11,6 +11,16 @@ namespace AppShift {
                 default_height: 600
             );
 
+            // Carregar o CSS
+            var css_provider = new Gtk.CssProvider();
+            try {
+                css_provider.load_from_path("/home/henrique/Projetos/AppShift/data/ui/style.css");
+                Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), css_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER);
+                stdout.printf("CSS file loaded successfully\n");
+            } catch (GLib.Error e) {
+                stderr.printf("Error loading CSS file: %s\n", e.message);
+            }
+
             // Adicionar mensagem de log para rastrear o fluxo de execução
             stdout.printf("MainWindow constructor started\n");
 
