@@ -26,3 +26,6 @@ executable('appshift',
   dependencies: dependencies,
   install: true
 )
+
+install_data('data/icons/appshift-icon.png', install_dir: get_option('prefix') / 'share' / 'icons' / 'hicolor' / 'scalable' / 'apps')
+install_subdir('data/ui', install_dir: get_option('prefix') / 'share' / 'appshift')
