@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-    <object class="GtkWindow" id="main_window">
-        <property name="default_width">800</property>
-        <property name="default_height">600</property>
+  <object class="GtkWindow" id="window">
+    <child>
+      <object class="GtkBox" id="box">
+        <property name="orientation">vertical</property>
         <child>
-            <object class="GtkBox" id="box">
-                <property name="orientation">vertical</property>
-                <child>
-                    <object class="GtkButton" id="list_apps_button">
-                        <property name="label">Listar Apps Instalados</property>
-                        <signal name="clicked" handler="on_list_apps_button_clicked" swapped="no"/>
-                    </object>
-                </child>
-                <child>
-                    <object class="GtkTextView" id="output_textview">
-                        <property name="editable">false</property>
-                    </object>
-                </child>
-            </object>
+          <object class="GtkButton" id="list_apps_button">
+            <property name="label">Listar apps instalados</property>
+          </object>
         </child>
-    </object>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolled_window">
+            <property name="vexpand">True</property>
+            <child>
+              <object class="GtkTextView" id="output_textview"/>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
 </interface>

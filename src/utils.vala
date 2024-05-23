@@ -3,13 +3,16 @@ namespace AppShift {
         public static string[] get_installed_packages () {
             try {
                 string[] argv = {"dpkg", "--get-selections"};
-                GLib.Subprocess subprocess = new GLib.Subprocess(
-                    GLib.SubprocessFlags.STDOUT_PIPE | GLib.SubprocessFlags.STDERR_PIPE,
-                    argv
+                var subprocess = new GLib.Subprocess.newv(
+                    argv,
+                    GLib.SubprocessFlags.STDOUT_PIPE | GLib.SubprocessFlags.STDERR_PIPE
                 );
                 string output;
                 string error_output;
-                subprocess.communicate_utf8(null, null, out output, out error_output);
+                bool success = subprocess.communicate_utf8(null, null, out output, out error_output);
+                if (!success) {
+                    warning("Subprocess failed: %s", error_output);
+                }
                 string[] packages = output.split("\n");
                 Gee.ArrayList<string> package_list = new Gee.ArrayList<string>();
                 foreach (string line in packages) {
