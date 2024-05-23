@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=AppShift
+Comment=Um aplicativo para migrar pacotes de um computador para outro
+Exec=/usr/local/bin/appshift
+Icon=/home/henrique/Projetos/AppShift/data/icons/appshift-icon.png
+Terminal=false
+Type=Application
+Categories=Utility;
