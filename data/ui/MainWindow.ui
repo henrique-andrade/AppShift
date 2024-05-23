@@ -7,11 +7,17 @@
         <child>
           <object class="GtkButton" id="list_apps_button">
             <property name="label">Listar apps instalados</property>
+            <style>
+              <class name="small-button"/>
+            </style>
           </object>
         </child>
         <child>
           <object class="GtkButton" id="export_csv_button">
             <property name="label">Exportar para CSV</property>
+            <style>
+              <class name="small-button"/>
+            </style>
           </object>
         </child>
         <child>
