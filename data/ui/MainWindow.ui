@@ -5,18 +5,34 @@
       <object class="GtkBox" id="box">
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkButton" id="list_apps_button">
+          <object class="GtkLabel" id="welcome_label">
+           <property name="label">AppShift</property>
+           <style>
+             <class name="h1"/>
+           </style>
+              </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+           <property name="label">Migre seus pacotes de um computador para outro.</property>
+           <style>
+             <class name="h2"/>
+           </style>
+              </object>
+        </child>
+        <child>
+          <object class="GtkToggleButton" id="list_apps_button">
             <property name="label">Listar apps instalados</property>
             <style>
-              <class name="small-button"/>
+              <class name="text-button toggle"/>
             </style>
           </object>
         </child>
         <child>
-          <object class="GtkButton" id="export_csv_button">
+          <object class="GtkToggleButton" id="export_csv_button">
             <property name="label">Exportar para CSV</property>
             <style>
-              <class name="small-button"/>
+              <class name="text-button toggle"/>
             </style>
           </object>
         </child>
