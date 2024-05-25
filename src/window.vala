@@ -7,7 +7,7 @@ namespace AppShift {
             Object (
                 application: app,
                 title: "AppShift",
-                default_width: 800,
+                default_width: 600,
                 default_height: 600
             );
 
