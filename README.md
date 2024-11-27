@@ -1,3 +1,3 @@
-# <img src="data/icons/appshift-icon.png?raw=true" height="48" width="53" align="left" /> AppShift
+# <img src="data/icons/appshift-icon.png?raw=true" height="47" width="48" align="left" /> AppShift
 
 Easily migrate your apps!
